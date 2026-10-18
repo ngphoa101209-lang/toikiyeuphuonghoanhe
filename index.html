@@ -21,16 +21,31 @@
 
 /* Sửa lỗi tràn màn hình trên điện thoại */
 * {
-  box-sizing: border-box;
-}
-body {
-  overflow-x: hidden;
-}
-img {
-  max-width: 100%;
-  height: auto;
+  box-sizing: border-box !important;
 }
 
+body {
+  overflow-x: hidden !important;
+}
+
+img {
+  max-width: 100% !important;
+  height: auto !important;
+}
+
+/* Ép các ô thông tin xếp thành hàng dọc trên điện thoại */
+@media (max-width: 600px) {
+  div, section, main, [class*="card"], [class*="container"] {
+    max-width: 100% !important;
+  }
+
+  /* Tự động chuyển hàng ngang thành hàng dọc */
+  div:has(> div) {
+    flex-direction: column !important;
+    display: flex !important;
+    width: 100% !important;
+  }
+}
 
         
 .option-btn.active {
